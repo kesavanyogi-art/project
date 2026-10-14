@@ -1,0 +1,11 @@
+{
+  "name": "employee-management-system",
+  "version": "1.0.0",
+  "description": "Employee Management System - Spring Boot + MySQL + Bootstrap (college project)",
+  "scripts": {
+    "db": "mysql -u root -p < database/schema.sql",
+    "start": "cd backend && mvn spring-boot:run",
+    "build": "cd backend && mvn clean package -DskipTests"
+  },
+  "license": "MIT"
+}

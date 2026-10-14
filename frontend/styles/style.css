@@ -1,0 +1,56 @@
+:root{--ink:#10262e;--ink2:#1b3a45;--teal:#0e7c86;--teal-d:#0a5f67;--sand:#f3f5f6;--line:#dde4e7;--muted:#64808a;--amber:#e8a33d}
+*{box-sizing:border-box}
+body{font-family:'Public Sans',system-ui,sans-serif;background:var(--sand);color:var(--ink);font-size:.93rem}
+a{color:var(--teal)}
+.btn-primary{background:var(--teal);border-color:var(--teal)}
+.btn-primary:hover,.btn-primary:focus{background:var(--teal-d);border-color:var(--teal-d)}
+.btn-outline-primary{color:var(--teal);border-color:var(--teal)}
+.btn-outline-primary:hover{background:var(--teal);border-color:var(--teal)}
+:focus-visible{outline:3px solid rgba(14,124,134,.45);outline-offset:2px}
+
+/* ---------- Login ---------- */
+.auth-wrap{min-height:100vh;display:grid;grid-template-columns:1.1fr 1fr}
+.auth-brand{background:var(--ink);color:#e9f1f3;padding:4rem;display:flex;flex-direction:column;justify-content:center}
+.auth-brand h1{font-size:2.4rem;font-weight:700;line-height:1.15;max-width:15ch}
+.auth-brand p{color:#a8c0c7;max-width:42ch}
+.auth-brand .demo{margin-top:2rem;border:1px solid #2c4a55;border-radius:10px;padding:1rem 1.2rem;max-width:380px;font-size:.85rem}
+.auth-form{display:flex;align-items:center;justify-content:center;padding:2rem;background:#fff}
+.auth-card{width:100%;max-width:380px}
+@media(max-width:850px){.auth-wrap{grid-template-columns:1fr}.auth-brand{padding:2rem}.auth-brand h1{font-size:1.7rem}}
+
+/* ---------- App shell ---------- */
+#sidebar{position:fixed;top:0;left:0;bottom:0;width:240px;background:var(--ink);color:#c5d6db;padding:1rem .75rem;overflow-y:auto;z-index:1040;transition:transform .2s}
+#sidebar .brand{font-weight:700;font-size:1.1rem;color:#fff;padding:.4rem .75rem 1.2rem;display:flex;gap:.6rem;align-items:center}
+#sidebar .brand i{background:var(--teal);border-radius:8px;padding:.35rem .5rem}
+#sidebar a{display:flex;align-items:center;gap:.7rem;padding:.6rem .75rem;border-radius:8px;color:#c5d6db;text-decoration:none;margin-bottom:2px}
+#sidebar a:hover{background:var(--ink2);color:#fff}
+#sidebar a.active{background:var(--teal);color:#fff}
+#main{margin-left:240px;min-height:100vh}
+.topbar{position:sticky;top:0;z-index:1030;background:#fff;border-bottom:1px solid var(--line);padding:.6rem 1.25rem;display:flex;gap:1rem;align-items:center}
+.topbar .search{max-width:340px;flex:1}
+.content{padding:1.5rem}
+@media(max-width:991px){#sidebar{transform:translateX(-100%)}#sidebar.open{transform:none}#main{margin-left:0}.content{padding:1rem}}
+
+/* ---------- Components ---------- */
+.card-box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.1rem 1.2rem}
+.stat{display:flex;align-items:center;gap:1rem}
+.stat .ico{width:46px;height:46px;border-radius:10px;display:grid;place-items:center;font-size:1.3rem;background:#e2f2f3;color:var(--teal)}
+.stat .num{font-size:1.6rem;font-weight:700;line-height:1}
+.stat .lbl{color:var(--muted);font-size:.82rem}
+.page-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem;margin-bottom:1rem}
+.page-head h4{margin:0;font-weight:700}
+.table{--bs-table-bg:transparent}
+.table thead th{font-size:.8rem;color:var(--muted);font-weight:600;border-bottom:1px solid var(--line);white-space:nowrap}
+.avatar{width:34px;height:34px;border-radius:50%;background:#d6ecee;color:var(--teal-d);display:inline-grid;place-items:center;font-weight:600;font-size:.8rem;flex:none;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.avatar-lg{width:96px;height:96px;font-size:1.8rem}
+.empty{text-align:center;padding:2.5rem 1rem;color:var(--muted)}
+.empty i{font-size:2rem;display:block;margin-bottom:.4rem}
+.loading{text-align:center;padding:3rem;color:var(--muted)}
+.chart-box{position:relative;height:250px}
+.kv{display:grid;grid-template-columns:150px 1fr;gap:.45rem .75rem}
+.kv dt{color:var(--muted);font-weight:500}.kv dd{margin:0}
+.notif-item{padding:.55rem .9rem;border-bottom:1px solid var(--line);font-size:.83rem}
+.notif-item.unread{background:#eef8f8}
+.payslip{border:2px solid var(--ink);padding:1.5rem;max-width:620px;margin:auto;background:#fff}
+@media print{#sidebar,.topbar,.no-print{display:none!important}#main{margin:0}}
